@@ -10,7 +10,8 @@ Projected benefits for the consumer - the student receives feedback when he subm
 
 Projected benefits for the lecturer – the lecturer receives the student’s score when the student submits a solution.
 
- _Project Description_
+ :dart:
+ Project Goals
 ----------------------------------------
 •	To enable the student to study algorithms in an efficient way.
 
