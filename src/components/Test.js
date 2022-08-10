@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './Ide.css'
 import axios from 'axios'
-import MonacoEditor from 'react-monaco-editor';
 import {code} from './defaultCode'
+import Editor from "@monaco-editor/react";
 
 export default class Test extends Component {
     state={
@@ -90,7 +90,14 @@ export default class Test extends Component {
                   </select>
                   <p className="code-ide">Code your code here</p>
                   <div className="editor" type="text" id="code">
-                    <MonacoEditor
+                    <Editor
+                  height="90vh"
+                  language={this.state.lang}
+                  theme="vs"
+                  value={this.state.code}
+                  onChange={this.onCodeChangeHandler}
+                  editorDidMount={this.editorDidMount}/>
+                    {/* <MonacoEditor
                       width="800"
                       height="700"
                       language={this.state.lang}
@@ -99,7 +106,7 @@ export default class Test extends Component {
                       options={options}
                       onChange={this.onCodeChangeHandler}
                       editorDidMount={this.editorDidMount}
-                    />
+                    /> */}
                   </div>
                 </div>
                 <div className="result-text">

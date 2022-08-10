@@ -12,11 +12,8 @@ router.post("/signup", async (req, res) => {
   const securePassword = await bycrypt.hash(req.body.password, saltPassword);
 
   const signUpUser = new signUpTemplateCopy({
-    fullName: req.body.fullName,
-    phone: req.body.phone,
-    email: req.body.email,
-    password: securePassword,
-    id: req.body.id,
+    AlgoName: 'BFS',
+    function: "visited = [] queue = []    ret_arr = [] def bfs(visited, graph, node): ret_arr.clear() visited.append(node) queue.append(node) while queue: m = queue.pop(0) ret_arr.append(m) for neighbour in graph[m]: if neighbour not in visited: visited.append(neighbour) queue.append(neighbour) return ret_arr"
   });
   signUpUser
     .save()

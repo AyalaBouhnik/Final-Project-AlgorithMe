@@ -25,12 +25,21 @@ const cExecute = (data, input) => {
     saveFile(fileName, data)
       .then(() => {
         // Create Input file
-        fs.writeFile("input.txt", input, function (err) {
-          if (err) {
-            console.log(err);
-            reject();
-          }
-        });
+        if (input) {
+          fs.writeFile("input.txt", input, function (err) {
+            if (err) {
+              console.log(err);
+              reject();
+            }
+          });
+        } else {
+          fs.writeFile("input.txt", "", function (err) {
+            if (err) {
+              console.log(err);
+              reject();
+            }
+          });
+        }
 
         // FILE SAVED SUCCESSFULLY
         // Generate the output file for it
@@ -92,12 +101,21 @@ const cPlusPlusExecute = (data, input) => {
     saveFile(fileName, data)
       .then(() => {
         // Create Input file
-        fs.writeFile("input.txt", input, function (err) {
-          if (err) {
-            console.log(err);
-            reject();
-          }
-        });
+       if (input) {
+         fs.writeFile("input.txt", input, function (err) {
+           if (err) {
+             console.log(err);
+             reject();
+           }
+         });
+       } else {
+         fs.writeFile("input.txt", "", function (err) {
+           if (err) {
+             console.log(err);
+             reject();
+           }
+         });
+       }
 
         // FILE SAVED SUCCESSFULLY
         // Generate the output file for it
@@ -158,12 +176,21 @@ const javaExecute = (data, input) => {
     saveFile(fileName, data)
       .then(() => {
         // Create Input file
-        fs.writeFile("input.txt", input, function (err) {
-          if (err) {
-            console.log(err);
-            reject();
-          }
-        });
+       if (input) {
+         fs.writeFile("input.txt", input, function (err) {
+           if (err) {
+             console.log(err);
+             reject();
+           }
+         });
+       } else {
+         fs.writeFile("input.txt", "", function (err) {
+           if (err) {
+             console.log(err);
+             reject();
+           }
+         });
+       }
 
         // FILE SAVED SUCCESSFULLY
         // Generate the output file for it
