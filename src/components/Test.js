@@ -62,17 +62,17 @@ export default class Test extends Component {
 
 
     render() {
-        const options = {
-            selectOnLineNumbers: true,
-            renderIndentGuides: true,
-            colorDecorators: true,
-            cursorBlinking: "blink",
-            autoClosingQuotes: "always",
-            find: {
-                autoFindInSelection: "always"
-            },
-            snippetSuggestions: "inline"
-          };
+        // const options = {
+        //     selectOnLineNumbers: true,
+        //     renderIndentGuides: true,
+        //     colorDecorators: true,
+        //     cursorBlinking: "blink",
+        //     autoClosingQuotes: "always",
+        //     find: {
+        //         autoFindInSelection: "always"
+        //     },
+        //     snippetSuggestions: "inline"
+        //   };
     //    console.log(this.state)
         return (
           <>
@@ -90,10 +90,10 @@ export default class Test extends Component {
                   </select>
                   <p className="code-ide">Code your code here</p>
                   <div className="editor" type="text" id="code">
-                    <Editor
+                  <Editor
                   height="90vh"
                   language={this.state.lang}
-                  theme="vs"
+                  theme="vs-dark"
                   value={this.state.code}
                   onChange={this.onCodeChangeHandler}
                   editorDidMount={this.editorDidMount}/>

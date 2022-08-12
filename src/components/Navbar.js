@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const { isLoading, error} = useAuth0();
-  const isAuthenticated = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <nav className="nav">
       <a href="/" className="site-title">
@@ -26,11 +26,11 @@ const Navbar = () => {
         <li>
           <a href="/Test">Start Test</a>
         </li>
-        {isAuthenticated && (
+        {isAuthenticated ? (
           <li>
             <Link to="/profile">Profile</Link>
           </li>
-        )}
+        ) : null}
       </ul>
     </nav>
   );

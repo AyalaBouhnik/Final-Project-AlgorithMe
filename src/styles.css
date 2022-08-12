@@ -21,20 +21,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, 
+body, 
+#background { 
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("./assets/img/banner-bg.png");
+  background-position: top center;
+  background-size: cover;  color: #fff !important;
+  font-family: "Centra", sans-serif !important;
 
-html {
+}
+ html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
 
-body {
+/* body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
   color: #fff !important;
   font-family: "Centra", sans-serif !important;
-}
+}  */
 .content {
   margin: 1rem;
 }
@@ -42,12 +52,15 @@ body {
 /*Start Test page*/
 .code-ide {
   margin: 0 auto;
-  width: 25%;
+  margin-right: 33rem;
+  width: 14%;
   margin-bottom: 2rem;
 }
 #lang {
-  margin-left: 33rem;
+  margin: 0 auto;
+  margin-left: 39rem;
   margin-bottom: 1rem;
+
 }
 
 .editor {
@@ -167,7 +180,6 @@ body {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url("./assets/img/banner-bg.png");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -254,3 +266,89 @@ body {
  margin: 5rem;
  padding: 2rem;
 }
+.algo-links{
+  grid-template-rows: auto;
+  font-weight: 700;
+  width: 70%;
+  margin-left: 17rem;
+/* justify-content: space-between;
+  text-align: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  transition: 0.3s ease-in-out; */
+}
+.list-css{
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  text-decoration: none;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+  background-color: #b8b8b8;
+  text-align: center;
+  
+}
+.list-css p {
+  text-align: center;
+  color: #333;
+}
+.list-css :hover {
+  background-color: #777;
+}
+
+.algo-links :any-link{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* .dfs-container {
+  margin-left: 40rem;
+
+} */
+.dfs-container #lang {
+  margin-left: 39rem;
+  margin-bottom: 1rem;
+}
+.dfs-container button {
+  margin-top: 2rem;
+  margin-left: 37rem;
+  background-color: blue;
+  width: 80%;
+}
+
+.dfs-result-text {
+  margin: 0 auto;
+  width: 67%;
+  margin-top: 2rem;
+  margin-left: 13rem;
+}
+.desciprtion  h2{
+  text-align: center;
+  padding: 1rem;
+}
+.desciprtion  p{
+    border: 5px solid #fff;
+    border-radius: 2rem;
+    width: 45rem;
+    height: auto;
+    padding: 5rem
+}
+
+.container-grid{
+  display: grid;
+  margin-left: 2rem;
+  grid-template-columns: 600px 200px;
+}
+
+
+
