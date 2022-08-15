@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/Graph_img_1.png";
 import { useState, useEffect } from "react";
 
 
@@ -79,11 +79,11 @@ const tick = () => {
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Intended for computer science students who want to practice
+                    algorithm problems, this is a networking web site that
+                    allows students to study, test themselves and track their
+                    progress. Our product allows lecturers to monitor students’
+                    grades and progress.
                   </p>
                   {/* <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />

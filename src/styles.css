@@ -83,6 +83,9 @@ body,
   margin-left: 13rem;
   margin-bottom: 1rem;
 }
+textarea {
+ margin-top: 1rem;
+}
 
 .container input {
   margin: 1rem;
@@ -294,13 +297,16 @@ body,
   text-decoration: none;
   background-color: #b8b8b8;
   text-align: center;
+  border-radius: 2rem;
+  margin-top: 2rem;
+
   
 }
 .list-css p {
   text-align: center;
   color: #333;
 }
-.list-css :hover {
+.list-css :link:hover {
   background-color: #777;
 }
 
@@ -339,6 +345,7 @@ body,
 .desciprtion  p{
     border: 5px solid #fff;
     border-radius: 2rem;
+    margin-top: 1rem;
     width: 45rem;
     height: auto;
     padding: 5rem
@@ -349,6 +356,27 @@ body,
   margin-left: 2rem;
   grid-template-columns: 600px 200px;
 }
+.editor-2 {
+  margin-top: 20rem;
+  width: 50%;
+  margin-left: 13rem;
+}
 
-
+.desciprtion-2  h2{
+  text-align: center;
+  padding: 1rem;
+}
+.desciprtion-2  p{
+    border: 5px solid #fff;
+    border-radius: 2rem;
+    width: 45rem;
+    height: auto;
+    padding: 5rem
+}
+.container-grid2{
+  margin-top: 15rem;
+  display: grid;
+  margin-left: 2rem;
+  grid-template-columns: 600px 200px;
+}
 

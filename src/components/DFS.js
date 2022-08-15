@@ -6,9 +6,10 @@ import Editor from "@monaco-editor/react";
 
 export default class DFS extends Component {
   state = {
-    code: code.pythonDfs,
+    code: code.python,
     result: "Submit Code to See Result",
     lang: "python",
+    algo: "DFS",
   };
 
   onSubmitHandler = (e) => {
@@ -75,10 +76,10 @@ export default class DFS extends Component {
         <div className="desciprtion">
           <h2>DFS desciprtion</h2>
           <p>
-            Breadth-first search (BFS) is an algorithm for searching a tree
-            data structure for a node that satisfies a given property. It starts
-            at the tree root and explores all nodes at the present depth prior
-            to moving on to the nodes at the next depth level. Extra memory,
+            Breadth-first search (BFS) is an algorithm for searching a tree data
+            structure for a node that satisfies a given property. It starts at
+            the tree root and explores all nodes at the present depth prior to
+            moving on to the nodes at the next depth level. Extra memory,
             usually a queue, is needed to keep track of the child nodes that
             were encountered but not yet explored. For example, in a chess
             endgame a chess engine may build the game tree from the current
@@ -121,15 +122,6 @@ export default class DFS extends Component {
                 />
               </div>
             </div>
-            <div className="dfs-result-text">
-              <p className="lead d-block my-0">Provide Input</p>
-              <textarea
-                type="text"
-                id="input"
-                value={this.state.input}
-                onChange={this.onInputChangeHandler}
-              ></textarea>
-            </div>
           </div>
           <button className="btn btn-success" onClick={this.onSubmitHandler}>
             Submit Code
@@ -137,6 +129,8 @@ export default class DFS extends Component {
           <div className="row">
             <div className="col-12 my-5">
               <textarea
+                rows="10"
+                cols="5"
                 type="text"
                 id="result"
                 value={this.state.result}

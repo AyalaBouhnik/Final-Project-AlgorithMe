@@ -1,10 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
+
 const Profile = () => {
   const { user } = useAuth0();
   const { name, picture, email } = user;
 
-return (
+  console.log(user);
+  return (
     <div>
       <div className="colunm">
         <div className="colunm">
@@ -21,6 +23,9 @@ return (
       </div>
     </div>
   );
+  
 };
+
+
 
 export default Profile;

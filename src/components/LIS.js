@@ -6,9 +6,10 @@ import Editor from "@monaco-editor/react";
 
 export default class LIS extends Component {
   state = {
-    code: code.pythonLis,
+    code: code.python,
     result: "Submit Code to See Result",
     lang: "python",
+    algo: "LIS",
   };
 
   onSubmitHandler = (e) => {
@@ -121,15 +122,6 @@ export default class LIS extends Component {
                 />
               </div>
             </div>
-            <div className="dfs-result-text">
-              <p className="lead d-block my-0">Provide Input</p>
-              <textarea
-                type="text"
-                id="input"
-                value={this.state.input}
-                onChange={this.onInputChangeHandler}
-              ></textarea>
-            </div>
           </div>
           <button className="btn btn-success" onClick={this.onSubmitHandler}>
             Submit Code
@@ -137,6 +129,8 @@ export default class LIS extends Component {
           <div className="row">
             <div className="col-12 my-5">
               <textarea
+                rows="10"
+                cols="5"
                 type="text"
                 id="result"
                 value={this.state.result}
