@@ -62,6 +62,38 @@ body,
   margin-bottom: 1rem;
 
 }
+#lang1 {
+  margin-left: 54rem;
+  margin-top: 5rem;
+ }
+ .test-admin h1{
+  text-align: center;
+ }
+.text-area-admin{
+  text-align: center;
+  
+}
+.buttonClick{
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 55rem;
+  background-color: blue;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 9%;
+}
+
+.test-admin2 {
+  margin-top: 25rem;
+  text-align: center;
+ }
+.text-area-admin2{
+  text-align: center;
+  
+}
+#lang2 {
+  margin-top: 5rem;
+ }
 
 .editor {
   margin: 0 auto;
@@ -379,4 +411,5 @@ textarea {
   margin-left: 2rem;
   grid-template-columns: 600px 200px;
 }
+
 

@@ -112,36 +112,10 @@ export default class Test extends Component {
       code3: newCode,
     });
   };
-  // onInputChangeHandler = (e) => {
-  //   this.setState({
-  //     input: e.target.value,
-  //   });
-  // };
-
-  // editorDidMount = (e) => {
-  //   //  console.log("EDITOR MOUNTED")
-  // };
-
-  // onLangSelectHandler = (e) => {
-  //   const lang = e.target.value;
-  //   this.setState({
-  //     lang,
-  //     code: code[lang],
-  //   });
-  // };
+  
 
   render() {
-    // const options = {
-    //   selectOnLineNumbers: true,
-    //   renderIndentGuides: true,
-    //   colorDecorators: true,
-    //   cursorBlinking: "blink",
-    //   autoClosingQuotes: "always",
-    //   find: {
-    //     autoFindInSelection: "always",
-    //   },
-    //   snippetSuggestions: "inline",
-    // };
+  
     return (
       <div>
         <div className="container-grid">

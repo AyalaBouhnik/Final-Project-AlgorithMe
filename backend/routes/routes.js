@@ -93,6 +93,24 @@ router.post("/testsubmit", (req, res) => {
     }
 })
 
+router.post("/maketest", (req, res) => {
+  const algoName = req.body[0];
+  switch (algoName) {
+    case "BFS":
+    //fill
+    case "DFS":
+    //fill
+    case "LCS":
+    //fill
+    case "LIS":
+    //fill
+    case "BubbleSort":
+    //fill
+    case "CountingSort":
+    //fill
+  }
+});
+
 
 
 module.exports = router;

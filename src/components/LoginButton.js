@@ -1,17 +1,38 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { GoogleButton } from "react-google-button";
+import { UserAuth } from "../context/authContext";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import React from 'react'
+
 
 const LoginButton = () => {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { googleSignIn, user } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() =>{
+    if(user != null){
+      navigate("/profile");
+    }
+  },[user]);
+
   return (
-    !isAuthenticated && (
-  <button onClick={() => loginWithRedirect()}>Sign In</button>
-)
-)
-}
+    <div>
+      <h1 className="text-center text-3xl font-bold py-8 ">Sign in</h1>
+      <div className="max-w-[240px] m-auto py-4">
+        <GoogleButton onClick={handleGoogleSignIn} />
+      </div>
+    </div>
+  );
+};
 
-export default LoginButton
-
-
+export default LoginButton;

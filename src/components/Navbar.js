@@ -1,38 +1,55 @@
 import React from "react";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
-
+import { UserAuth } from "../context/authContext";
+import Protected from "./Protected";
 
 const Navbar = () => {
-  const { isLoading, error,user} = useAuth0();
-  const { isAuthenticated } = useAuth0();
-
+const {user, logOut} = UserAuth();
+const handleSignOut = async() =>{
+  try{
+    await logOut();
+  }catch (error){
+    console.log(error)
+  }
+}
+const isAdmin = () =>{
+  try {
+    if(user.email === "edendahary1@gmail.com"){
+      return true;
+    }else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+console.log(user?.displayName);
   return (
     <nav className="nav">
       <a href="/" className="site-title">
         AlgoritMe
       </a>
-      {error && <p>Authentication Errror</p>}
-      {!error && isLoading && <p>Loading...</p>}
-      {!error && !isLoading && <></>}
+
       <ul>
+        <li>
+          {user?.displayName && user.email === "edendahary1@gmail.com" && (
+            <Link to="/admintest">CreateTest</Link>
+          )}
+        </li>
         <li>
           <Link to="/practice">Practice</Link>
         </li>
         <li className="active">
-          <LoginButton />
-          <LogoutButton />
+          {user?.displayName ? (
+            <button onClick={handleSignOut}>Log Out</button>
+          ) : (
+            <Link to="/loginbutton">Sign in</Link>
+          )}
         </li>
         <li>
           <a href="/Test">Start Test</a>
         </li>
-        {isAuthenticated ? (
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-        ) : null}
+        <li>{user?.displayName ? <Link to="/profile">Profile</Link> : ""}</li>
       </ul>
     </nav>
   );
