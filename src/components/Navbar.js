@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/authContext";
-import Protected from "./Protected";
 
 const Navbar = () => {
 const {user, logOut} = UserAuth();
@@ -12,17 +11,7 @@ const handleSignOut = async() =>{
     console.log(error)
   }
 }
-const isAdmin = () =>{
-  try {
-    if(user.email === "edendahary1@gmail.com" || user.email === "yosefdassa@gmail.com"){
-      return true;
-    }else {
-      return false;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
+
 console.log(user?.displayName);
   return (
     <nav className="nav">
@@ -32,7 +21,7 @@ console.log(user?.displayName);
 
       <ul>
         <li>
-          {user?.displayName && user.email === "edendahary1@gmail.com" && (
+          {user?.displayName && (user.email === "edendahary1@gmail.com" || user.email === "yosefdassa@gmail.com"  ) && (
             <Link to="/admintest">Create Test</Link>
           )}
         </li>
