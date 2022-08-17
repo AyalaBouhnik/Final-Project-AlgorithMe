@@ -15,8 +15,6 @@ import React from 'react';
 import { AuthContextProvider } from './context/authContext';
 import LoginButton from './components/LoginButton';
 import Protected from './components/Protected';
-import {db} from './firebase'
-import {uid} from "uid"
 import CreateTest from './components/CreateTest';
 
 function App() {

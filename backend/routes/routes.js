@@ -8,25 +8,6 @@ const execute = require("./compile");
 const ExecuteTest = require("./compileTest");
 
 
-// router.post("/signup", async (req, res) => {
-//   const saltPassword = await bycrypt.genSalt(10);
-//   const securePassword = await bycrypt.hash(req.body.password, saltPassword);
-
-//   const signUpUser = new signUpTemplateCopy({
-//     AlgoName: 'BFS',
-//     function: "visited = [] queue = []    ret_arr = [] def bfs(visited, graph, node): ret_arr.clear() visited.append(node) queue.append(node) while queue: m = queue.pop(0) ret_arr.append(m) for neighbour in graph[m]: if neighbour not in visited: visited.append(neighbour) queue.append(neighbour) return ret_arr"
-//   });
-//   signUpUser
-//     .save()
-//     .then((data) => {
-//       res.json(data);
-//     })
-//     .catch((error) => {
-//       res.json(error);
-//     });
-// });
-
-
 
 router.get("/test", (req, res) => {
   res.json({ msg: "code route" });
@@ -63,6 +44,7 @@ router.post("/testsubmit", (req, res) => {
     if (req.body.arrBol[0]) {
       const code = req.body.code1;
       const quest = req.body.quest;
+      
       return ExecuteTest.pythonExecuteTest(code, quest)
         .then((data) => {
           res.json(data);
@@ -94,10 +76,17 @@ router.post("/testsubmit", (req, res) => {
 })
 
 router.post("/maketest", (req, res) => {
-  const algoName = req.body[0];
+  let algoName = req.body[0];
+  const text = req.body[1];
+  const questNumber = req.body[2];
+  algoName=algoName+".txt"
+
+
   switch (algoName) {
-    case "BFS":
-    //fill
+    case "BFS.txt":
+      saveFile(algoName,text).then(() => {
+        console.log("jo")
+      })
     case "DFS":
     //fill
     case "LCS":
@@ -110,6 +99,22 @@ router.post("/maketest", (req, res) => {
     //fill
   }
 });
+
+const saveFile = (algoName, text) => {
+  return new Promise((resolve, reject) => {
+    // Saving File
+    console.log("SAVING FILES");
+    fs.writeFile(algoName, text, function (err) {
+      if (err) {
+        console.log(err);
+        reject();
+      } else {
+        console.log("The file was saved!");
+        resolve();
+      }
+    });
+  });
+};
 
 
 

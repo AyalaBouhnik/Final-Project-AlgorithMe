@@ -79,11 +79,12 @@ const tick = () => {
                     </span>
                   </h1>
                   <p>
-                    Intended for computer science students who want to practice
-                    algorithm problems, this is a networking web site that
-                    allows students to study, test themselves and track their
-                    progress. Our product allows lecturers to monitor students’
-                    grades and progress.
+                    Computer science students - we've got your back! Want to
+                    practice algorithm problems? Looking for a place to study,
+                    test yourself, and even track your incredible progress?
+                    AlgorithMe is your home turf. Lecturers - we're here for you
+                    too! This is the ideal place to monitor your students'
+                    grades and progress. Come join the fun.
                   </p>
                   {/* <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />

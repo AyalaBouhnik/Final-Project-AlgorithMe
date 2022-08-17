@@ -16,6 +16,19 @@ const java = `class test {
 
 const python = `# Your code will come here
 `;
+const pythonSingtureBFS = `def bfs(visited, graph, node): #function for BFS
+
+return ret_arr # return an array`;
+const pythonSingtureDFS = `def dfs(visited, graph, node): #function for DFS
+
+return ret_arr # return an array`;
+
+
+const pythonSingtureLCS = `def lcs(X, Y): #function for LCS
+
+return L[m][n]`;
+
+
 
 const pythonBfs = `visited = [] # List for visited nodes.
 queue = []     #Initialize a queue
@@ -165,6 +178,9 @@ export const code = {
   pythonLis,
   pythonBubbleSort,
   pythonCountingSort,
+  pythonSingtureBFS,
+  pythonSingtureDFS,
+  pythonSingtureLCS,
 };
 
 

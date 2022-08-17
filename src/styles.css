@@ -26,7 +26,7 @@ body,
 #background { 
   width: 100vw;
   min-height: 100vh;
-  background-image: url("./assets/img/banner-bg.png");
+  background-image: url("./assets/img/image_back.jpeg");
   background-position: top center;
   background-size: cover;  color: #fff !important;
   font-family: "Centra", sans-serif !important;
@@ -210,6 +210,24 @@ textarea {
   font-weight: 400;
   color: #fff;
 }
+
+.profileImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+.py-2_px-5_mt-10 {
+  width: 100px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  justify-content: center ;
+}
+
 
 /***** Home-Banner ****/
 .banner {

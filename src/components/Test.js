@@ -3,17 +3,19 @@ import "./Ide.css";
 import axios from "axios";
 import { code } from "./defaultCode";
 import Editor from "@monaco-editor/react";
+import {useLocation} from 'react-router-dom'
+
 
 
 export default class Test extends Component {
   state = {
-    code1: code.python,
-    code2: code.python,
-    code3: code.python,
+    code1: code.pythonSingtureBFS,
+    code2: code.pythonSingtureDFS,
+    code3: code.pythonSingtureLCS,
     result: "Submit Code to See Result",
     lang: "python",
     quest: 1,
-    arrBol:[false , false ,false],
+    arrBol: [false, false, false],
   };
 
   onSubmitHandler1 = (e) => {
@@ -112,44 +114,24 @@ export default class Test extends Component {
       code3: newCode,
     });
   };
-  
 
   render() {
-  
     return (
       <div>
         <div className="container-grid">
           <div className="desciprtion">
             <h2>Q.1</h2>
             <p>
-              Breadth-first search (BFS) is an algorithm for searching a tree
-              data structure for a node that satisfies a given property. It
-              starts at the tree root and explores all nodes at the present
-              depth prior to moving on to the nodes at the next depth level.
-              Extra memory, usually a queue, is needed to keep track of the
-              child nodes that were encountered but not yet explored. For
-              example, in a chess endgame a chess engine may build the game tree
-              from the current position by applying all possible moves, and use
-              breadth-first search to find a win position for white. Implicit
-              trees (such as game trees or other problem-solving trees) may be
-              of infinite size; breadth-first search is guaranteed to find a
-              solution node[1] if one exists. In contrast, (plain) depth-first
-              search, which explores the node branch as far as possible before
-              backtracking and expanding other nodes,[2] may get lost in an
-              infinite branch and never make it to the solution node. Iterative
-              deepening depth-first search avoids the latter drawback at the
-              price of exploring the tree's top parts over and over again. On
-              the other hand, both depth-first algorithms get along without
-              extra memory. Breadth-first search can be generalized to graphs,
-              when the start node (sometimes referred to as a 'search key')[3]
-              is explicitly given, and precautions are taken against following a
-              vertex twice. BFS and its application in finding connected
-              components of graphs were invented in 1945 by Konrad Zuse, in his
-              (rejected) Ph.D. thesis on the Plankalkül programming language,
-              but this was not published until 1972.[4] It was reinvented in
-              1959 by Edward F. Moore, who used it to find the shortest path out
-              of a maze,[5][6] and later developed by C. Y. Lee into a wire
-              routing algorithm (published 1961).
+              BFS is an algorithm for traversing or searching tree or graph data
+              structures. It starts at the tree root (or some arbitrary node of
+              a graph, sometimes referred to as a "search key"') and explores
+              the neighbor nodes first, before moving to the next level
+              neighbors.
+              <h5>The task :</h5>
+              Given a directed graph. is to perform a Breadth First Traversal of
+              this graph starting from a given vertex. Note: usevisited = [] #
+              List for visited nodes. queue = [] # Initialize a queue ret_arr =
+              [] # Final solution
             </p>
           </div>
           <div className="dfs-container">
@@ -173,7 +155,7 @@ export default class Test extends Component {
             <button className="btn btn-success" onClick={this.onSubmitHandler1}>
               Submit Code
             </button>
-            <div className="row">
+            {/* <div className="row">
               <div className="col-12 my-3">
                 <textarea
                   rows="10"
@@ -184,7 +166,7 @@ export default class Test extends Component {
                   disabled={true}
                 ></textarea>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* // Question 2 */}
@@ -192,34 +174,21 @@ export default class Test extends Component {
           <div className="desciprtion">
             <h2>Q.2</h2>
             <p>
-              Breadth-first search (BFS) is an algorithm for searching a tree
-              data structure for a node that satisfies a given property. It
-              starts at the tree root and explores all nodes at the present
-              depth prior to moving on to the nodes at the next depth level.
-              Extra memory, usually a queue, is needed to keep track of the
-              child nodes that were encountered but not yet explored. For
-              example, in a chess endgame a chess engine may build the game tree
-              from the current position by applying all possible moves, and use
-              breadth-first search to find a win position for white. Implicit
-              trees (such as game trees or other problem-solving trees) may be
-              of infinite size; breadth-first search is guaranteed to find a
-              solution node[1] if one exists. In contrast, (plain) depth-first
-              search, which explores the node branch as far as possible before
-              backtracking and expanding other nodes,[2] may get lost in an
-              infinite branch and never make it to the solution node. Iterative
-              deepening depth-first search avoids the latter drawback at the
-              price of exploring the tree's top parts over and over again. On
-              the other hand, both depth-first algorithms get along without
-              extra memory. Breadth-first search can be generalized to graphs,
-              when the start node (sometimes referred to as a 'search key')[3]
-              is explicitly given, and precautions are taken against following a
-              vertex twice. BFS and its application in finding connected
-              components of graphs were invented in 1945 by Konrad Zuse, in his
-              (rejected) Ph.D. thesis on the Plankalkül programming language,
-              but this was not published until 1972.[4] It was reinvented in
-              1959 by Edward F. Moore, who used it to find the shortest path out
-              of a maze,[5][6] and later developed by C. Y. Lee into a wire
-              routing algorithm (published 1961).
+              DFS or Depth First Search is an algorithm for traversing or
+              searching tree or graph data structures. It starts at the root
+              (selecting some arbitrary node as the root in the case of a graph)
+              and explores as far as possible along each branch before
+              backtracking. Note: Unlike trees, graphs may contain cycles, so we
+              may come to the same node again. To avoid processing a node more
+              than once, we use a boolean visited array. task: Given a directed
+              graph. is to perform a Depth First Search of this graph starting
+              from a given vertex. Create a recursive function that takes the
+              index of the node and a visited array.
+              <br />
+              <h6>use:</h6> visited = set() # Set to keep track of visited nodes
+              of graph.
+              <br />
+              ret_arr = [] # for final solution
             </p>
           </div>
           <div className="dfs-container">
@@ -243,7 +212,7 @@ export default class Test extends Component {
             <button className="btn btn-success" onClick={this.onSubmitHandler2}>
               Submit Code
             </button>
-            <div className="row">
+            {/* <div className="row">
               <div className="col-12 my-3">
                 <textarea
                   rows="10"
@@ -254,7 +223,7 @@ export default class Test extends Component {
                   disabled={true}
                 ></textarea>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -314,7 +283,7 @@ export default class Test extends Component {
             <button className="btn btn-success" onClick={this.onSubmitHandler3}>
               Submit Code
             </button>
-            <div className="row">
+            {/* <div className="row">
               <div className="col-12 my-3">
                 <textarea
                   rows="10"
@@ -325,7 +294,7 @@ export default class Test extends Component {
                   disabled={true}
                 ></textarea>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

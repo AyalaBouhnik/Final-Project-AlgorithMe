@@ -14,7 +14,7 @@ const handleSignOut = async() =>{
 }
 const isAdmin = () =>{
   try {
-    if(user.email === "edendahary1@gmail.com"){
+    if(user.email === "edendahary1@gmail.com" || user.email === "yosefdassa@gmail.com"){
       return true;
     }else {
       return false;
@@ -27,13 +27,13 @@ console.log(user?.displayName);
   return (
     <nav className="nav">
       <a href="/" className="site-title">
-        AlgoritMe
+        AlgorithMe
       </a>
 
       <ul>
         <li>
           {user?.displayName && user.email === "edendahary1@gmail.com" && (
-            <Link to="/admintest">CreateTest</Link>
+            <Link to="/admintest">Create Test</Link>
           )}
         </li>
         <li>
@@ -47,7 +47,7 @@ console.log(user?.displayName);
           )}
         </li>
         <li>
-          <a href="/Test">Start Test</a>
+          <a href="/test">Start Test</a>
         </li>
         <li>{user?.displayName ? <Link to="/profile">Profile</Link> : ""}</li>
       </ul>

@@ -1,16 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { UserAuth } from "../context/authContext";
+import { Link } from "react-router-dom";
 
 const CreateTest = () => {
   const [input, setInput] = useState("Question 1");
   const [input2, setInput2] = useState("Question 2");
   const [input3, setInput3] = useState("Question 3");
-  const [algo,setAlgo] = useState("BFS");
+  const [algo, setAlgo] = useState("BFS");
   const [algo2, setAlgo2] = useState("BFS");
   const [algo3, setAlgo3] = useState("BFS");
-
-//Input Question 
+  //Input Question
   const onInputChangeHandler = (e) => {
     setInput(e.target.value);
   };
@@ -20,35 +19,10 @@ const CreateTest = () => {
   const onInputChangeHandler3 = (e) => {
     setInput3(e.target.value);
   };
+
   const onClickQuest1 = (e) => {
-    e.preventDefault();
-     axios
-       .post("http://localhost:4000/app/maketest", [algo, input])
-       .then((res) => {
-         this.state.arrBol[2] = false;
-         console.log(res.data);
-         const data = res.data;
-         if (data.err) {
-           // Error in user code
-           this.setState({
-             result3: data.error,
-           });
-         } else {
-           this.setState({
-             result3: data.output,
-           });
-         }
-       })
-       .catch((err) => {
-         console.log(err);
-       });
-
-  };
-
-  const onClickQuest2 = (e) => {
-    e.preventDefault();
     axios
-      .post("http://localhost:4000/app/maketest", [algo2, input2])
+      .post("http://localhost:4000/app/maketest", [algo, input, 1])
       .then((res) => {
         this.state.arrBol[2] = false;
         console.log(res.data);
@@ -69,11 +43,34 @@ const CreateTest = () => {
       });
   };
 
+  const onClickQuest2 = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4000/app/maketest", [algo2, input2, 2])
+      .then((res) => {
+        this.state.arrBol[2] = false;
+        console.log(res.data);
+        const data = res.data;
+        if (data.err) {
+          // Error in user code
+          this.setState({
+            result3: data.error,
+          });
+        } else {
+          this.setState({
+            result3: data.output,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const onClickQuest3 = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/app/maketest", [algo3, input3])
+      .post("http://localhost:4000/app/maketest", [algo3, input3, 3])
       .then((res) => {
         console.log(res.data);
       })
@@ -82,21 +79,20 @@ const CreateTest = () => {
       });
   };
 
-// Select Algo
+  // Select Algo
   const onAlgoSelectHandler = (e) => {
-     const algo = e.target.value;
-     setAlgo(algo);
-   };
+    const algo = e.target.value;
+    setAlgo(algo);
+  };
   const onAlgoSelectHandler2 = (e) => {
-     const algo = e.target.value;
-     setAlgo2(algo);
-   };
+    const algo = e.target.value;
+    setAlgo2(algo);
+  };
 
-  const  onAlgoSelectHandler3 = (e) => {
-     const algo = e.target.value;
-     setAlgo3(algo);
-   };
-
+  const onAlgoSelectHandler3 = (e) => {
+    const algo = e.target.value;
+    setAlgo3(algo);
+  };
 
   return (
     <div>
@@ -178,4 +174,4 @@ const CreateTest = () => {
   );
 };
 
-export default CreateTest;
+export default CreateTest
