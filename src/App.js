@@ -10,7 +10,8 @@ import LCS from "./components/LCS";
 import LIS from "./components/LIS";
 import BubbleSort from "./components/BubbleSort";
 import CountingSort from "./components/CountingSort";
-
+import LCS_Arrays from "./components/LCS_arrays";
+import MergeSort from "./components/MergeSort";
 import React from 'react';
 import { AuthContextProvider } from './context/authContext';
 import LoginButton from './components/LoginButton';
@@ -44,6 +45,8 @@ function App() {
                 <Route path="/lis" element={<LIS />} />
                 <Route path="/bubblesort" element={<BubbleSort />} />
                 <Route path="/countingsort" element={<CountingSort />} />
+                <Route path="/LCS_Arrays" element={<LCS_Arrays />} />
+                <Route path="/MergeSort" element={<MergeSort />} />
                 <Route
                   path="/admintest"
                   element={

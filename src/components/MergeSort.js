@@ -4,12 +4,12 @@ import axios from "axios";
 import { code } from "./defaultCode";
 import Editor from "@monaco-editor/react";
 
-export default class BubbleSort extends Component {
+export default class MergeSort extends Component {
   state = {
     code: code.python,
     result: "Submit Code to See Result",
     lang: "python",
-    algo: "BubbleSort",
+    algo: "MergeSort",
   };
 
   onSubmitHandler = (e) => {
@@ -74,28 +74,26 @@ export default class BubbleSort extends Component {
     return (
       <div className="container-grid">
         <div className="desciprtion">
-          <h2>BubbleSort desciprtion</h2>
+          <h2>MergeSort desciprtion</h2>
           <p>
-            <h5>BubbleSort: </h5>
-            <br /> Bubble sort is a simple sorting algorithm that repeatedly
-            steps through the input list element by element, comparing the
-            current element with the one after it, swapping their values if
-            needed.
-            <br />
-            <br /> These passes through the list are repeated until no swaps had
-            to be performed during a pass, meaning that the list has become
-            fully sorted. The algorithm, which is a comparison sort, is named
-            for the way the larger elements "bubble" up to the top of the list.
-            <br />
-            <br />
-            In short , Bubble Sort is the simplest sorting algorithm that works
-            by repeatedly swapping the adjacent elements if they are in the
-            wrong order.
-            <br />
-            <br /> <h5>Task: </h5> Given an Integer N and a list arr.
-            <br /> Sort the array using bubble sort algorithm Signature of a
-            function:
-            <br /> <h6>def BubbleSort(array):</h6>
+            <h5> Merge Sort: </h5>
+            The Merge Sort algorithm is a sorting algorithm that is considered an example of the divide 
+            and conquer strategy. So, in this algorithm, the array is initially divided into two equal
+            halves and then they are combined in a sorted manner. We can think of it as a recursive
+            algorithm that continuously splits the array in half until it cannot be further divided. 
+            This means that if the array becomes empty or has only one element left, the dividing will 
+            stop, i.e. it is the base case to stop the recursion. If the array has multiple elements, 
+            we split the array into halves and recursively invoke the merge sort on each of the halves.
+            Finally, when both the halves are sorted, the merge operation is applied. Merge operation is
+            the process of taking two smaller sorted arrays and combining them to eventually make a larger one.
+
+            <h5>The task :</h5>
+            Given an array arr[], its starting position l and its ending position r. Sort the array using merge sort algorithm.
+            Note:
+            note: use helper function
+            <h5>Signature of a function:</h5>
+            1. def mergeSort(arr, l, r):
+            2. def merge(arr, l, m, r):
           </p>
         </div>
         <div className="dfs-container">

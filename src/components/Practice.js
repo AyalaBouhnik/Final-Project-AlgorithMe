@@ -32,6 +32,14 @@ const Practice = () => {
           <Link to="/countingsort">CountingSort</Link>
           <p>Try to solve this algorithm</p>
         </li>
+        <li className="list-css">
+          <Link to="/LCS_Arrays">LCS_arrays</Link>
+          <p>Try to solve this algoritihm</p>
+        </li>
+        <li className="list-css">
+          <Link to="/MergeSort">MergeSort</Link>
+          <p>Try to solve this algoritihm</p>
+        </li>
       </ul>
     </div>
   );

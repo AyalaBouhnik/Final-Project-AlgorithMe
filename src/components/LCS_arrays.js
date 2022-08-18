@@ -4,12 +4,12 @@ import axios from "axios";
 import { code } from "./defaultCode";
 import Editor from "@monaco-editor/react";
 
-export default class BubbleSort extends Component {
+export default class LCS_arrays extends Component {
   state = {
     code: code.python,
     result: "Submit Code to See Result",
     lang: "python",
-    algo: "BubbleSort",
+    algo: "LCS_arrays",
   };
 
   onSubmitHandler = (e) => {
@@ -74,28 +74,23 @@ export default class BubbleSort extends Component {
     return (
       <div className="container-grid">
         <div className="desciprtion">
-          <h2>BubbleSort desciprtion</h2>
+          <h2>LCS_2arrays desciprtion</h2>
           <p>
-            <h5>BubbleSort: </h5>
-            <br /> Bubble sort is a simple sorting algorithm that repeatedly
-            steps through the input list element by element, comparing the
-            current element with the one after it, swapping their values if
-            needed.
-            <br />
-            <br /> These passes through the list are repeated until no swaps had
-            to be performed during a pass, meaning that the list has become
-            fully sorted. The algorithm, which is a comparison sort, is named
-            for the way the larger elements "bubble" up to the top of the list.
-            <br />
-            <br />
-            In short , Bubble Sort is the simplest sorting algorithm that works
-            by repeatedly swapping the adjacent elements if they are in the
-            wrong order.
-            <br />
-            <br /> <h5>Task: </h5> Given an Integer N and a list arr.
-            <br /> Sort the array using bubble sort algorithm Signature of a
-            function:
-            <br /> <h6>def BubbleSort(array):</h6>
+          <h5> LCS_arrays: </h5>
+            The longest common subsequence (LCS) is defined as the longest subsequence that is
+            common to all the given sequences, provided that the elements of the subsequence are
+            not required to occupy consecutive positions within the original sequences.
+
+            <h5>The task :</h5>
+            Given two sequences of numbers, return the length of their longest common subsequence. 
+            If it doesn't exist , return 0.
+            A subsequence is a sequence that appears in the same relative order, but 
+            not necessarily contiguous. 
+            Example of subsequence:
+            [ 1, 3, 8] ,[ 1, 18, 28] ,[ 3, 18, 28] ,.. etc are subsequences of [1,4,3,18,28,18]
+         
+            <h5>Signature of a function:</h5>           
+            def LCS_2arrays(X, Y):
           </p>
         </div>
         <div className="dfs-container">
